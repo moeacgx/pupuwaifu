@@ -1,6 +1,7 @@
 :root {
     --bg: #cfa4a4;
     --bg-accent: #d6b1b1;
+    --bg-deep: #694949;
     --card: rgba(255, 255, 255, 0.68);
     --text: #2c1e1e;
     --muted: #674f4f;
@@ -20,7 +21,7 @@ body {
     display: grid;
     place-items: center;
     padding: 40px 16px 64px;
-    background: radial-gradient(circle at top, #dcbabb 0%, #b68888 55%, #694949 100%);
+    background: radial-gradient(circle at top, var(--bg) 0%, var(--bg-accent) 55%, var(--bg-deep) 100%);
     color: var(--text);
 }
 
@@ -68,6 +69,7 @@ body {
     display: flex;
     gap: 16px;
     justify-content: center;
+    margin: 10px 0 0;
 }
 
 .social-link {
@@ -91,10 +93,40 @@ body {
     box-shadow: 0 10px 20px rgba(44, 30, 30, 0.18);
 }
 
+.status-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 18px auto 8px;
+    box-shadow: 0 8px 18px rgba(44, 30, 30, 0.12);
+}
+
+.status-chip.error {
+    background: #fbeaea;
+    color: #8b1a1a;
+    border: 1px solid #f1c9c9;
+}
+
 .cta-list {
     display: grid;
     gap: 16px;
-    margin: 36px 0;
+    margin: 24px 0 32px;
+}
+
+.cta-divider {
+    height: 1px;
+    width: 140px;
+    margin: 8px auto;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    backdrop-filter: blur(2px);
+    border-radius: 999px;
+    opacity: 0.8;
 }
 
 .cta-card {
@@ -130,6 +162,7 @@ body {
 .cta-card.locked {
     color: var(--muted);
     background: rgba(255, 255, 255, 0.35);
+    pointer-events: none;
 }
 
 .cta-card.locked svg {
@@ -141,6 +174,11 @@ body {
     box-shadow: none;
     cursor: default;
     background: rgba(255, 255, 255, 0.35);
+}
+
+.cta-card.outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 .footer {
@@ -170,6 +208,10 @@ body {
     background: var(--muted);
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(44, 30, 30, 0.35);
+}
+
+.hidden {
+    display: none !important;
 }
 
 @media (max-width: 480px) {

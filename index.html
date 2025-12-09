@@ -1,55 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUPUWAIFU Links</title>
+    <title>Links</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="config.js"></script>
 </head>
 <body>
     <main class="profile">
         <section class="profile-header">
             <div class="avatar">
-                <img src="assets/profile.png" alt="PUPUWAIFU portrait">
+                <img id="avatar" src="assets/profile.png" alt="头像" loading="lazy">
             </div>
-            <h1>&#9825; PUPUWAIFU &#9825;</h1>
-            <p class="tagline">&#9825; You look lonely, I can fix that &#9825;</p>
-            <nav class="social-links" aria-label="Social links">
-                <a href="https://instagram.com" class="social-link" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm12 1a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg>
-                </a>
-                <a href="https://tiktok.com" class="social-link" aria-label="TikTok">
-                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M17 3c.08 1.27.67 2.43 1.55 3.29A5.4 5.4 0 0021 7v3.07c-1.3-.04-2.6-.42-3.76-1.1v6.38c0 3.41-2.6 6.45-6.21 6.65A6.5 6.5 0 014.2 15.2a6.43 6.43 0 015.68-6.59c.38-.04.77-.05 1.15-.03v3.36a3.3 3.3 0 00-.9-.03 3.15 3.15 0 00-.66 6.22 3.22 3.22 0 003.76-3.17V2h3.77z"/></svg>
-                </a>
-            </nav>
+            <h1 id="name">加载中…</h1>
+            <p class="tagline" id="tagline"></p>
+            <nav class="social-links" id="social-links" aria-label="社交链接"></nav>
         </section>
 
-        <section class="cta-list" aria-label="Primary links">
-            <a class="cta-card" href="https://t.me/PuPuWaiFuVIP_Bot?start=pupuwaifu_com" target="_blank" rel="noopener">
-                <span>TG纸飞机订阅&#10024; 支持人民币</span>
-            </a>
-            <a class="cta-card" href="https://tsmeod.top/#/register?code=0jiT9rGz" target="_blank" rel="noopener">
-                <span>机场推荐</span>
-            <a class="cta-card" href="https://x.com/pupuwaifu" target="_blank" rel="noopener">
-                <span>X (TWITTER)</span>
+        <div id="status" class="status-chip">正在从 JSON 拉取配置…</div>
 
-            </a>
-            <a class="cta-card locked" href="#" aria-disabled="true">
-                <span>FANSONE&#10024; 支持人民币</span>
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M17 8V7a5 5 0 10-10 0v1H5v13h14V8h-2zm-8-1a3 3 0 016 0v1H9V7zm8 12H7V10h10v9z"/></svg>
-            </a>
-        </section>
+        <section class="cta-list" id="cta-list" aria-label="主要链接"></section>
 
-        <section class="footer">
-            <p class="footnote">Cookie Policy &middot; Terms &middot; Privacy</p>
-            <p class="footnote">在Linktree上加入 pupuwaifu</p>
-            <a class="cta-primary" href="https://linktr.ee/you" target="_blank" rel="noopener">linktr.ee/you</a>
+        <section class="footer" id="footer">
+            <p class="footnote" id="footer-line-1"></p>
+            <p class="footnote" id="footer-line-2"></p>
+            <a class="cta-primary" id="footer-cta" href="#" target="_blank" rel="noopener"></a>
         </section>
     </main>
+    <script src="app.js" defer></script>
 </body>
 </html>
-
-
